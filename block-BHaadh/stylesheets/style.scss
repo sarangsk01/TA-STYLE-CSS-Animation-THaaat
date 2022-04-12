@@ -1,0 +1,50 @@
+@import "vars";
+@import "reset";
+@import "general";
+
+.container{
+    margin: 180px auto;
+    display: flex;
+    place-content: center;
+    gap: 32px;
+    padding: 32px;
+}
+.cube{
+    width: 100px;
+    height: 100px;
+    background-color: $yellow;
+    border-radius: 4px;
+    position: relative;
+    animation: myAnimation 2s linear 0.5s 2 normal backwards;
+}
+.b1{
+    &:hover{
+        transform: rotate(45deg) scale(1.5) translate(120px) skewX(120deg);
+    }
+}
+.b2{
+    background-color: rgba($brown, 0.7);
+    transform-origin: 100% 100%;
+    &:hover{
+        transform: perspective(240px) scaleZ(2) translate(129px) rotate(49deg);
+    }
+}
+
+@keyframes myAnimation {
+    0%{
+        left: 0;
+        top: 0;
+        background-color: $yellow;
+
+    }
+    50%{
+        left: 244px;
+        top: 100px;
+        background-color: $brown;
+    }
+    100%{
+        left: 488px;
+        top: 0px;
+        background-color: $red;
+    }
+}
